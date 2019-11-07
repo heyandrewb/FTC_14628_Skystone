@@ -11,17 +11,12 @@ import com.qualcomm.robotcore.util.Range;
 public class SkystoneTeleop extends OpMode {
 
     /* Declare OpMode members. */
-    SkystoneHardwareMap robot = new SkystoneHardwareMap(); // use the class created to define a Pushbot's hardware
-    public final double intakeUpPosition = 0.5;
-    public final double intakeShootPosition = 0.3;
-    public final double intakeDownPosition = 0.0;
-
-    public final double intakeSpeed = 1.0;
-    public final double outakeSpeed = -1.0;
+    SkystoneHardwareMap robot = new SkystoneHardwareMap();
 
     public double forward = 0.0;
     public double strafe = 0.0;
     public double rotate = 0.0;
+
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -36,9 +31,6 @@ public class SkystoneTeleop extends OpMode {
         robot.frontRightDrive.setPower(0.0);
         robot.backLeftDrive.setPower(0.0);
         robot.backRightDrive.setPower(0.0);
-
-        robot.leftIntakeServo.setPosition(intakeDownPosition);
-        robot.rightIntakeServo.setPosition(intakeDownPosition);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Waiting for start...", "");
