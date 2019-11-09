@@ -76,8 +76,8 @@ public class SkystoneHardwareMap {
         liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        leftIntakeServo = hwMap.get(Servo.class, "leftIntakeServo");
-        rightIntakeServo = hwMap.get(Servo.class, "rightIntakeServo");
+        leftIntakeServo = hwMap.get(Servo.class, "IntakeLeft");
+        rightIntakeServo = hwMap.get(Servo.class, "IntakeRight");
     }
 }
 

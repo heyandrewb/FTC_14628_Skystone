@@ -61,8 +61,8 @@ public class SkystoneTeleop extends OpMode {
      */
     @Override
     public void loop() {
-        forward = Range.clip(gamepad1.left_stick_y, -1, 1);
-        strafe  = Range.clip(gamepad1.left_stick_x, -1, 1);
+        forward = -Range.clip(gamepad1.left_stick_y, -1, 1);
+        strafe  = -Range.clip(gamepad1.left_stick_x, -1, 1);
         rotate  = Range.clip(gamepad1.right_stick_x, -1, 1);
 
         liftPower = Range.clip(gamepad2.left_stick_y, -1, 1);
