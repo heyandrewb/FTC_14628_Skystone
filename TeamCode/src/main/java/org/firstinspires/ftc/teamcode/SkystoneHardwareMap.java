@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -26,6 +27,9 @@ public class SkystoneHardwareMap {
     public DcMotor frontRightDrive = null;
     public DcMotor backLeftDrive = null;
     public DcMotor backRightDrive = null;
+
+    public DcMotor liftMotor = null;
+
     public Servo leftIntakeServo = null;
     public Servo rightIntakeServo = null;
 
@@ -44,17 +48,23 @@ public class SkystoneHardwareMap {
         backLeftDrive = hwMap.get(DcMotor.class, "BackLeft");
         backRightDrive = hwMap.get(DcMotor.class, "BackRight");
 
+        liftMotor = hwMap.get(DcMotor.class, "Lift");
+
         // Set motor directions
         frontLeftDrive.setDirection(DcMotor.Direction.FORWARD);
         frontRightDrive.setDirection(DcMotor.Direction.REVERSE);
         backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
         backRightDrive.setDirection(DcMotor.Direction.REVERSE);
 
+        liftMotor.setDirection(DcMotor.Direction.FORWARD);
+
         // Set all motors to zero power
         frontLeftDrive.setPower(0);
         frontRightDrive.setPower(0);
         backLeftDrive.setPower(0);
         backRightDrive.setPower(0);
+
+        liftMotor.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
@@ -63,9 +73,11 @@ public class SkystoneHardwareMap {
         backLeftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         backRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
+        liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
         // Define and initialize ALL installed servos.
-        leftIntakeServo = hwMap.get(Servo.class, "IntakeLeft");
-        rightIntakeServo = hwMap.get(Servo.class, "IntakeRight");
+        leftIntakeServo = hwMap.get(Servo.class, "leftIntakeServo");
+        rightIntakeServo = hwMap.get(Servo.class, "rightIntakeServo");
     }
 }
 
