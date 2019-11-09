@@ -39,10 +39,10 @@ public class SkystoneHardwareMap {
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        frontLeftDrive = hwMap.get(DcMotor.class, "frontLeftDrive");
-        frontRightDrive = hwMap.get(DcMotor.class, "frontRightDrive");
-        backLeftDrive = hwMap.get(DcMotor.class, "backLeftDrive");
-        backRightDrive = hwMap.get(DcMotor.class, "backRightDrive");
+        frontLeftDrive = hwMap.get(DcMotor.class, "FrontLeft");
+        frontRightDrive = hwMap.get(DcMotor.class, "FrontRight");
+        backLeftDrive = hwMap.get(DcMotor.class, "BackLeft");
+        backRightDrive = hwMap.get(DcMotor.class, "BackRight");
 
         // Set motor directions
         frontLeftDrive.setDirection(DcMotor.Direction.FORWARD);
@@ -64,8 +64,8 @@ public class SkystoneHardwareMap {
         backRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        leftIntakeServo = hwMap.get(Servo.class, "leftIntakeServo");
-        rightIntakeServo = hwMap.get(Servo.class, "rightIntakeServo");
+        leftIntakeServo = hwMap.get(Servo.class, "IntakeLeft");
+        rightIntakeServo = hwMap.get(Servo.class, "IntakeRight");
     }
 }
 
