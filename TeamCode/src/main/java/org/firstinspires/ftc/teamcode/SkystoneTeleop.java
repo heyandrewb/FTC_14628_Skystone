@@ -4,6 +4,9 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.utilFuncs;
+
+import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.util.Range;
 
 
@@ -21,6 +24,10 @@ public class SkystoneTeleop extends OpMode {
     public double liftPower = 0.0;
 
     Lift m_lift;
+    Intake m_intake;
+    Arm m_arm;
+
+    Sensors m_sensors;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -37,7 +44,11 @@ public class SkystoneTeleop extends OpMode {
         robot.backLeftDrive.setPower(0.0);
         robot.backRightDrive.setPower(0.0);
 
-        m_lift = new Lift(robot.liftMotor);
+        m_lift = new Lift(robot.liftMotor, robot.liftDownLimit, robot.liftUpLimit);
+        m_intake = new Intake(robot.leftIntakeServo, robot.rightIntakeServo, robot.leftIntakeWheel, robot.rightIntakeWheel);
+        m_arm = new Arm(robot);
+
+        m_sensors = new Sensors(robot.colorSensor, robot.distLeft, robot.distRight);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Waiting for start...", "");
