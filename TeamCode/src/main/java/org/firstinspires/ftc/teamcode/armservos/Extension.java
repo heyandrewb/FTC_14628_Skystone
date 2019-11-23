@@ -1,26 +1,35 @@
 package org.firstinspires.ftc.teamcode.armservos;
 
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 
 public class Extension {
-    Servo m_extension;
+    CRServo m_extension;
 
     TouchSensor m_outLimit;
     TouchSensor m_inLimit;
 
-    public Extension(Servo extension, TouchSensor outLimit, TouchSensor inLimit) {
+    public Extension(CRServo extension, TouchSensor outLimit, TouchSensor inLimit) {
         m_extension = extension;
         m_outLimit = outLimit;
         m_inLimit = inLimit;
     }
 
     public void open() {
-        // TODO: open
+        if(!m_outLimit.isPressed()) {
+            m_extension.setPower(1);
+        } else {
+            m_extension.setPower(0);
+        }
     }
 
     public void close() {
-        // TODO: close
+        if(!m_inLimit.isPressed()) {
+            m_extension.setPower(-1);
+        } else {
+            m_extension.setPower(0);
+        }
     }
 
     public void moveManualOut() {
@@ -32,6 +41,6 @@ public class Extension {
     }
 
     public void kill() {
-        // TODO: kill
+        m_extension.setPower(0);
     }
 }

@@ -10,7 +10,7 @@ public class Elbow {
     }
 
     public void store() {
-        // TODO: store
+        m_elbow.setPosition(-1);
     }
 
     public void grab() {
@@ -18,6 +18,6 @@ public class Elbow {
     }
 
     public void score() {
-        // TODO: score
+        m_elbow.setPosition(1);
     }
 }
