@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -44,8 +45,8 @@ public class SkystoneHardwareMap {
 
     // arm
     public Servo elbowServo = null;
-    public Servo extensionServo = null;
-    public Servo gripperServo = null;
+    public CRServo extensionServo = null;
+    public CRServo gripperServo = null;
     public TouchSensor extensionLimitIn = null;
     public TouchSensor extensionLimitOut = null;
     public TouchSensor gripperLimitIn = null;
@@ -111,25 +112,25 @@ public class SkystoneHardwareMap {
         rightIntakeWheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        leftIntakeServo = hwMap.get(Servo.class, "LeftIntakeServo");
-        rightIntakeServo = hwMap.get(Servo.class, "RightIntakeServo");
-
-        elbowServo = hwMap.get(Servo.class, "ElbowServo");
-        extensionServo = hwMap.get(Servo.class, "ExtensionServo");
-        gripperServo = hwMap.get(Servo.class, "GripperServo");
-
-        // Define and initialize limit switches.
-        liftUpLimit = hwMap.get(TouchSensor.class, "LiftUpLimit");
-        liftDownLimit = hwMap.get(TouchSensor.class, "LiftDownLimit");
-        extensionLimitIn = hwMap.get(TouchSensor.class, "ExtensionLimitIn");
-        extensionLimitOut = hwMap.get(TouchSensor.class, "ExtencionLimitOut");
-        gripperLimitIn = hwMap.get(TouchSensor.class, "GripperLimitIn");
-        gripperLimitOut = hwMap.get(TouchSensor.class, "GripperLimitOut");
-
-        // Define and initialize sensors
-        colorSensor = hwMap.get(ColorSensor.class, "ColorSensor");
-        distLeft = hwMap.get(DistanceSensor.class, "LeftDistSensor");
-        distRight = hwMap.get(DistanceSensor.class, "RightDistSensor");
+//        leftIntakeServo = hwMap.get(Servo.class, "LeftIntakeServo");
+//        rightIntakeServo = hwMap.get(Servo.class, "RightIntakeServo");
+//
+//        elbowServo = hwMap.get(Servo.class, "ElbowServo");
+//        extensionServo = hwMap.get(CRServo.class, "ExtensionServo");
+//        gripperServo = hwMap.get(CRServo.class, "GripperServo");
+//
+//        // Define and initialize limit switches.
+//        liftUpLimit = hwMap.get(TouchSensor.class, "LiftUpLimit");
+//        liftDownLimit = hwMap.get(TouchSensor.class, "LiftDownLimit");
+//        extensionLimitIn = hwMap.get(TouchSensor.class, "ExtensionLimitIn");
+//        extensionLimitOut = hwMap.get(TouchSensor.class, "ExtencionLimitOut");
+//        gripperLimitIn = hwMap.get(TouchSensor.class, "GripperLimitIn");
+//        gripperLimitOut = hwMap.get(TouchSensor.class, "GripperLimitOut");
+//
+//        // Define and initialize sensors
+//        colorSensor = hwMap.get(ColorSensor.class, "ColorSensor");
+//        distLeft = hwMap.get(DistanceSensor.class, "LeftDistSensor");
+//        distRight = hwMap.get(DistanceSensor.class, "RightDistSensor");
     }
 }
 

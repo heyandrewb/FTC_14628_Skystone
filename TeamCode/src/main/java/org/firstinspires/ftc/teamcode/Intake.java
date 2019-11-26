@@ -15,7 +15,7 @@ public class Intake {
     final double shoot = 0.2;
     final double store = 0.4;
 
-    final double wheelInSpeed = 0.7;
+    final double wheelInSpeed = 0.4;
     final double wheelOutSpeed = 0.3;
     final double shootSpeed = 1.0;
 
@@ -53,7 +53,7 @@ public class Intake {
 
     public void wheelKill() {
         m_intakeLeftWheel.setPower(0.0);
-        m_intakeLeftWheel.setPower(0.0);
+        m_intakeRightWheel.setPower(0.0);
     }
 
     public void store() {

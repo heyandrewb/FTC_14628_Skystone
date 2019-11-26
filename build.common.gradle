@@ -104,6 +104,7 @@ android {
 repositories {
     flatDir {
         dirs rootProject.file('libs')
+        maven { url 'https://jitpack.io' }
     }
 }
 apply from: 'build.release.gradle'

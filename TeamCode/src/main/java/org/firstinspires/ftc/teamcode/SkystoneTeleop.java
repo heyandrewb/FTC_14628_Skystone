@@ -88,6 +88,14 @@ public class SkystoneTeleop extends OpMode {
             } else {
                 m_lift.lowerLift(liftPower);
             }
+        } else {
+            m_lift.kill();
+        }
+
+        if(gamepad2.a) {
+            m_intake.wheelIn();
+        } else {
+            m_intake.wheelKill();
         }
 
         telemetry.addData("Forward Value: ",  forward);
